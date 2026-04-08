@@ -15,5 +15,5 @@ public class Click {
     private String username;
     private String password;
     private int click;
-    private boolean ban;
+    private boolean banned;
 }
