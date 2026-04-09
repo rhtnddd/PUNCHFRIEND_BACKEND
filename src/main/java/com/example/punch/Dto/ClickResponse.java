@@ -3,7 +3,7 @@ package com.example.punch.Dto;
 import lombok.Getter;
 
 @Getter
-public class ClickRequest {
+public class ClickResponse {
     private String username;
-    private String password;
+    private int clicks;
 }
