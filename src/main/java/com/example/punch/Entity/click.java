@@ -12,4 +12,7 @@ public class click {
     private Long id;
     private int clicks;
     private boolean ban;
+    @Column(unique = true)
+    private String username;
+    private String password;
 }

@@ -10,5 +10,7 @@ public class ClickController {
         return click;
     }
     @PostMapping("/new")
-    public String newClick() {}
+    public String newClick() {
+        return "New click";
+    }
 }
