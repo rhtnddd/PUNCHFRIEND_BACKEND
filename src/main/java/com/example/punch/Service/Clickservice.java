@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import com.example.punch.Repository.Userrepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -12,5 +13,8 @@ public class Clickservice {
     private final Userrepository userrepository;
     public click getUserByUsername(String username, String password) {
         return userrepository.findByUsernameAndPassword(username,password).orElse(null);
+    }
+    public List<click> getAllByClickCounts(){
+        return userrepository.findAll();
     }
 }
