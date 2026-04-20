@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface Userrepository extends JpaRepository<click, String> {
-    Optional<click> findByUsername(String username);
+public interface Userrepository extends JpaRepository<click, Long> {
+    Optional<click> findByUsernameAndPassword(String username, String password);
 }
