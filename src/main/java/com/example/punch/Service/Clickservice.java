@@ -11,10 +11,17 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class Clickservice {
     private final Userrepository userrepository;
+    private final AsyncClickService asyncClickService;
+
     public click getUserByUsername(String username, String password) {
         return userrepository.findByUsernameAndPassword(username,password).orElse(null);
     }
+
     public List<click> getAllByClickCounts(){
         return userrepository.findAll();
+    }
+
+    public void ClickAsync(String username, String password) {
+        asyncClickService.ClickAsync(username,password);
     }
 }
