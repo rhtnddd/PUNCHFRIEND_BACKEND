@@ -13,9 +13,10 @@ public class AsyncClickService {
 
     @Async
     @Transactional
-    public void save(String username, String password){
+    public void ClickAsync(String username, String password){
         click user = userrepository.findByUsernameAndPassword(username,password).
                 orElseGet(()-> new click(username,password));
         user.plusClick();
+        userrepository.save(user);
     }
 }
