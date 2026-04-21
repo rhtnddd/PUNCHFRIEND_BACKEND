@@ -13,7 +13,7 @@ public class Clickservice {
     private final Userrepository userrepository;
     private final AsyncClickService asyncClickService;
 
-    public click getUserByUsername(String username, String password) {
+    public click getClickCounts(String username, String password) {
         return userrepository.findByUsernameAndPassword(username,password).orElse(null);
     }
 

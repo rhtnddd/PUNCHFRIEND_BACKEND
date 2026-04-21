@@ -1,16 +1,29 @@
 package com.example.punch.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+import com.example.punch.Service.Clickservice;
+import com.example.punch.Dto.ClickResponse;
+import com.example.punch.Dto.ClickRequest;
+import com.example.punch.Entity.click;
+
+import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 public class ClickController {
-    @GetMapping("/click")
-    public int Click (int click) {
-        return click;
+    private final Clickservice clickservice;
+    @GetMapping
+    public click getClickCounts(@RequestParam String username, @RequestParam String password) {
+        return clickservice.getClickCounts(username, password);
     }
-    @PostMapping("/new")
-    public String newClick() {
-        return "New click";
+
+    @GetMapping("/all")
+    public List<click> getAllClickCounts(@RequestParam String username, @RequestParam String password) {
+        return clickservice.getAllByClickCounts();
+    }
+
+    @PostMapping
+    public void ClickAsync(@RequestParam String username, @RequestParam String password) {
+        clickservice.ClickAsync(username, password);
     }
 }
