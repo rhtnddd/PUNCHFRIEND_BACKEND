@@ -22,6 +22,13 @@ public class Clickservice {
     }
 
     public void ClickAsync(String username, String password) {
+        click user = userrepository.findByUsername(username).
+                orElseGet(()-> userrepository.save(new click(username,password)));
+
+        if(!user.getUsername().equals(username)){
+            throw new RuntimeException("비밀번호 틀림");
+        }
+
         asyncClickService.ClickAsync(username,password);
     }
 }
