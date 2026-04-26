@@ -1,0 +1,9 @@
+  spring:
+    datasource:
+      driver-class-name:
+      url: {DB_URL}
+      username: {DB_NAME}
+      passward: {DB_PASSWARD}
+
+    jpa:
+
