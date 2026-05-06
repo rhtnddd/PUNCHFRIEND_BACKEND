@@ -1,16 +1,15 @@
 package com.example.punch.Service;
+
+import com.example.punch.Repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-import com.example.punch.Entity.click;
-import com.example.punch.Repository.Userrepository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
 public class AsyncClickService {
-    private final Userrepository userrepository;
+    private final UserRepository userrepository;
 
     @Async
     @Transactional

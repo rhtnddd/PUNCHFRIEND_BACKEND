@@ -1,16 +1,15 @@
 package com.example.punch.Service;
 import com.example.punch.Entity.click;
 import lombok.RequiredArgsConstructor;
-import com.example.punch.Repository.Userrepository;
+import com.example.punch.Repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class Clickservice {
-    private final Userrepository userrepository;
+public class ClickService {
+    private final UserRepository userrepository;
     private final AsyncClickService asyncClickService;
 
     public click getClickCounts(String username, String password) {
